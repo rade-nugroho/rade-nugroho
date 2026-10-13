@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
 
-<img src="assets/banner-v2.gif" width="100%" alt="8-bit animated banner" />
+<img src="assets/banner-v3.gif" width="100%" alt="8-bit animated banner" />
 
 # Rade Nugroho
 
