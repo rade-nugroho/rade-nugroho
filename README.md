@@ -9,13 +9,16 @@
 
 </div>
 
-### What I do
+### Building
 
-- **[TANTIRA](https://github.com/TANTIRA)** — an ontology-driven, agentic enterprise stack: logistics & supply chain, CRM, finance, HR, and decision support as one integrated platform.
-- **Decision intelligence** — data fusion, entity resolution, and graph analytics for AML & crypto investigations (DAEMON) and Indonesian public procurement (DULANG).
-- **Open source** — deterministic Solana program auditing, agentic OSINT, and detection engineering.
+- **[TANTIRA](https://github.com/TANTIRA)** — ontology-driven, agentic enterprise stack:
+  - **Mesta-TMS-WMS** — TMS & WMS where AI agents plan, execute, track, and settle operations end-to-end — Rust.
+  - **Mesta-Foundry** — enterprise data operating system — Python.
+  - **Raven** — common operating picture & target workbench: geospatial COP, ontology APIs, defense OSDK — Python.
+- **[daemonprotocol](https://github.com/daemonprotocol)** — decision intelligence for AML & compliance investigations: data fusion, entity resolution, graph analytics, case management.
+- **Open source** — deterministic Solana program auditing, agentic OSINT, detection engineering.
 
-### Selected work
+### Selected open work
 
 | | |
 |---|---|
