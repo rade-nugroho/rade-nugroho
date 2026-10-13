@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
 
 # Rade Nugroho
@@ -9,7 +10,7 @@
 
 </div>
 
-### Building
+## Building
 
 - **[TANTIRA](https://github.com/TANTIRA)** — ontology-driven, agentic enterprise stack:
   - **Mesta-TMS-WMS** — TMS & WMS where AI agents plan, execute, track, and settle operations end-to-end — Rust.
@@ -18,10 +19,10 @@
 - **[daemonprotocol](https://github.com/daemonprotocol)** — decision intelligence for AML & compliance investigations: data fusion, entity resolution, graph analytics, case management.
 - **Open source** — deterministic Solana program auditing, agentic OSINT, detection engineering.
 
-### Selected open work
+## Selected open work
 
 | | |
-|---|---|
+| --- | --- |
 | **[ARES-v3](https://github.com/rade-nugroho/ARES-v3)** | Deterministic static audit of Solana smart contracts via multi-model agents — Rust. |
 | **[Solana-Ontology-SDK](https://github.com/rade-nugroho/Solana-Ontology-SDK)** | Data-logic-action layer for Solana built on an ontology system — TypeScript. |
 | **[MORDOR](https://github.com/rade-nugroho/MORDOR)** | Malware orchestration & reverse-engineering detection — Python. |
@@ -29,5 +30,12 @@
 | **[Grond](https://github.com/rade-nugroho/Grond)** | Agentic open-source intelligence — Python. |
 | **[Agentic-Enteprises-Skill](https://github.com/rade-nugroho/Agentic-Enteprises-Skill)** | Agent skill for enterprise workflows. |
 | **[Octo](https://github.com/TANTIRA/OCTO)** | Machine-verifiable book of record for machine-native money — Kotlin. |
+
+### Activity
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=rade-nugroho&bg_color=0d1117&color=c9d1d9&line=58a6ff&point=58a6ff&area=true&hide_border=true" />
+  <img alt="Contribution activity graph for rade-nugroho" src="https://github-readme-activity-graph.vercel.app/graph?username=rade-nugroho&bg_color=ffffff&color=24292f&line=0969da&point=0969da&area=true&hide_border=true" />
+</picture>
 
 <sub>Last updated: October 2026</sub>
