@@ -10,6 +10,8 @@
 
 </div>
 
+<img align="right" width="160" src="assets/mascot.gif" alt="pixel mascot at a terminal" />
+
 ## Building
 
 - **[TANTIRA](https://github.com/TANTIRA)** — ontology-driven, agentic enterprise stack:
