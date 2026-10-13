@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
 
-<img src="assets/banner.gif" width="100%" alt="8-bit neon city banner" />
+<img src="assets/banner.png" width="100%" alt="8-bit pixel art banner" />
 
 # Rade Nugroho
 
