@@ -1,6 +1,8 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
 
+<img src="assets/banner.gif" width="100%" alt="8-bit neon city banner" />
+
 # Rade Nugroho
 
 **Founder-engineer building ontology-driven, agentic systems.**
