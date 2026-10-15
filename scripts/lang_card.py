@@ -237,6 +237,8 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--login", default="rade-nugroho")
     p.add_argument("--org", action="append", default=[], help="also count this org's repos (repeatable)")
+    p.add_argument("--require-private", action="store_true",
+                   help="leave existing cards untouched if the token sees no private repos")
     p.add_argument("--out", default="assets")
     p.add_argument("--self-test", action="store_true")
     a = p.parse_args()
@@ -246,6 +248,9 @@ def main():
     if not token:
         sys.exit("GITHUB_TOKEN (or GH_TOKEN) is required")
     langs, n_repos, n_private = fetch([("user", a.login)] + [("org", o) for o in a.org], token)
+    if a.require_private and n_private == 0:
+        print(f"::warning::token sees 0 private repos ({n_repos} public); language card left unchanged")
+        return
     today = dt.datetime.now(dt.timezone.utc).date()
     os.makedirs(a.out, exist_ok=True)
     for th in THEMES:

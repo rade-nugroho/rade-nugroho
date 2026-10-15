@@ -34,7 +34,7 @@ jobs:
         run: |
           # without the secret only public repos are visible; keep the committed card instead of shrinking it
           if [ -z "$GITHUB_TOKEN" ]; then echo "::warning::PROFILE_STATS_TOKEN not set; language card not refreshed"; exit 0; fi
-          python scripts/lang_card.py --login "${{ github.repository_owner }}" --org TANTIRA --out assets
+          python scripts/lang_card.py --login "${{ github.repository_owner }}" --org TANTIRA --require-private --out assets
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
