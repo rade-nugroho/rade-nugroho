@@ -1,7 +1,12 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
 
-<img src="assets/banner-v3.gif" width="100%" alt="8-bit animated banner" />
+<picture>
+  <source srcset="assets/lucy-3d-v1.webp" type="image/webp" />
+  <img src="assets/lucy-3d-v1.gif" width="320" alt="Animated 3D Lucy from Cyberpunk: Edgerunners, breathing and blinking as the camera slowly orbits" />
+</picture>
+
+<sub>Lucy fan art (<i>Cyberpunk: Edgerunners</i>). This is an unofficial fan work and is not approved/endorsed by CD PROJEKT RED.</sub>
 
 # Rade Nugroho
 
