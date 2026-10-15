@@ -8,7 +8,7 @@
 
 # Rade Nugroho
 
-**Founder-engineer building ontology-driven, agentic systems.**
+**FDE, ontology-driven, agentic enterprise systems.**
 
 [![X](https://img.shields.io/badge/X-%40XBT__kw-000000?style=flat&logo=x)](https://x.com/XBT_kw)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Nyoko%20Karma%20Nugroho-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/nyoko-karma-nugroho-99b888386/)
