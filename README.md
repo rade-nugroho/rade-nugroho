@@ -24,23 +24,11 @@
 - **[daemonprotocol](https://github.com/daemonprotocol)**: decision intelligence for AML and compliance investigations, covering data fusion, entity resolution, graph analytics and case management.
 - **Open source**: deterministic Solana program auditing, agentic OSINT and detection engineering.
 
-## Selected open work
-
-| Project | What it does | Stack |
-| --- | --- | --- |
-| **[ARES-v3](https://github.com/rade-nugroho/ARES-v3)** | Deterministic static audit of Solana smart contracts through multi-phase taint tracking and macro-aware AST parsing. | Rust |
-| **[Solana-Ontology-SDK](https://github.com/rade-nugroho/Solana-Ontology-SDK)** | A data-logic-action layer for Solana built on an ontology system. | TypeScript |
-| **[MORDOR](https://github.com/rade-nugroho/MORDOR)** | Malware orchestration and reverse-engineering detection runtime. | Python |
-| **[project-raven-d3fend](https://github.com/rade-nugroho/project-raven-d3fend)** | Proactive threat hunting, grounded in CDP and aligned to D3FEND. | Python |
-| **[Grond](https://github.com/rade-nugroho/Grond)** | Agentic open-source intelligence. | Python |
-| **[Agentic-Enteprises-Skill](https://github.com/rade-nugroho/Agentic-Enteprises-Skill)** | An agent skill for enterprise workflows. | Python |
-| **[Octo](https://github.com/TANTIRA/OCTO)** | A machine-verifiable book of record for machine-native money. | Kotlin |
-
 ## Most used languages
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/top-langs-dark.svg" />
-  <img width="100%" alt="Treemap of most used languages across public repositories, led by TypeScript" src="assets/top-langs-light.svg" />
+  <img width="100%" alt="Treemap of most used languages across personal and TANTIRA repositories, led by TypeScript" src="assets/top-langs-light.svg" />
 </picture>
 
 ## Activity
