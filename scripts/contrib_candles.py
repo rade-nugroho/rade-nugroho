@@ -24,10 +24,11 @@ THEMES = {
     "light": dict(frame="#f6f8fa", panel="#ffffff", border="#d0d7de", grid="#eaeef2", fg="#1f2328",
                   muted="#59636e", up="#1a7f37", down="#cf222e", ref="#c9d1d9", tag_fg="#ffffff"),
 }
-W, H = 880, 470
-LEFT, RIGHT = 64, 72                 # plot insets inside the svg
-PRICE_TOP, PRICE_H = 132, 220
-VOL_TOP, VOL_H = 376, 56
+# full = desktop README width; compact = phones (served via <picture media="(max-width: 600px)">)
+LAYOUTS = {
+    "full": dict(W=880, H=470, LEFT=64, RIGHT=72, PRICE_TOP=132, PRICE_H=220, VOL_TOP=376, VOL_H=56, weeks=None),
+    "compact": dict(W=360, H=372, LEFT=40, RIGHT=56, PRICE_TOP=124, PRICE_H=150, VOL_TOP=290, VOL_H=44, weeks=13),
+}
 MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
 
 
@@ -77,9 +78,14 @@ def fmt(n):
     return f"{n:,.0f}" if abs(n) >= 1000 or float(n).is_integer() else f"{n:,.1f}"
 
 
-def render(weeks, theme, today):
+def render(weeks, theme, today, size="full"):
     t = THEMES[theme]
-    weeks = trim(weeks)
+    L = LAYOUTS[size]
+    W, H, LEFT, RIGHT = L["W"], L["H"], L["LEFT"], L["RIGHT"]
+    PRICE_TOP, PRICE_H, VOL_TOP, VOL_H = L["PRICE_TOP"], L["PRICE_H"], L["VOL_TOP"], L["VOL_H"]
+    compact = size == "compact"
+    all_days = [c for w in weeks for _, c in w]   # headline numbers cover the whole year, whatever the chart shows
+    weeks = trim(weeks)[-L["weeks"]:] if L["weeks"] else trim(weeks)
     cs = candles(weeks)
     days = [c for w in weeks for _, c in w]
     n = len(cs)
@@ -92,15 +98,15 @@ def render(weeks, theme, today):
     y = lambda v: PRICE_TOP + PRICE_H - v / top * PRICE_H
     vy = lambda v: VOL_TOP + VOL_H - v / vtop * (VOL_H - 14)
 
-    total = sum(days)
-    last7, prev7 = sum(days[-7:]), sum(days[-14:-7])
+    total = sum(all_days)
+    last7, prev7 = sum(all_days[-7:]), sum(all_days[-14:-7])
     delta = last7 - prev7
     pct = delta / prev7 * 100 if prev7 else 0.0
     sign = "+" if delta >= 0 else "−"
     delta_col = t["up"] if delta >= 0 else t["down"]
     peak_week = max(c["volume"] for c in cs)
-    active = sum(1 for d in days if d)
-    avg = total / len(days)
+    active = sum(1 for d in all_days if d)
+    avg = sum(days) / len(days)                  # average over the charted weeks, drawn on the chart
     last = cs[-1]
 
     s = []
@@ -109,7 +115,7 @@ def render(weeks, theme, today):
       f'role="img" aria-labelledby="t d">')
     a(f'<title id="t">Weekly contribution candles for the last {n} weeks</title>')
     a(f'<desc id="d">{fmt(total)} contributions; last 7 days {fmt(last7)} ({sign}{abs(pct):.1f}% vs the 7 days before). '
-      f'Peak day {fmt(max(days))}, peak week {fmt(peak_week)}.</desc>')
+      f'Peak day {fmt(max(all_days))}, peak week {fmt(peak_week)}.</desc>')
     a('<style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;'
       'font-variant-numeric:tabular-nums}</style>')
     # frame + panel, like a dashboard card
@@ -118,18 +124,23 @@ def render(weeks, theme, today):
     # header
     a(f'<text x="28" y="40" font-size="13" fill="{t["muted"]}">Contributions · weekly candles · {n}W</text>')
     a(f'<text x="28" y="78" font-size="30" font-weight="500" letter-spacing="-0.6" fill="{t["fg"]}">{fmt(total)}</text>')
-    nx = 28 + 16.5 * len(fmt(total)) + 12      # approx. advance of the 30px headline digits
-    a(f'<text x="{nx:.0f}" y="78" font-size="13"><tspan fill="{delta_col}">{sign}{fmt(abs(delta))} ({sign}{abs(pct):.1f}%)</tspan>'
-      f'<tspan fill="{t["muted"]}"> last 7 days</tspan></text>')
-    a(f'<text x="28" y="100" font-size="12" fill="{t["muted"]}">Peak day {fmt(max(days))} · peak week {fmt(peak_week)} · '
-      f'{active} active days</text>')
-    a(f'<text x="{W-28}" y="40" font-size="12" text-anchor="end" fill="{t["muted"]}">Updated {MONTHS[today.month-1]} {today.day}, {today.year}</text>')
+    delta_txt = (f'<tspan fill="{delta_col}">{sign}{fmt(abs(delta))} ({sign}{abs(pct):.1f}%)</tspan>'
+                 f'<tspan fill="{t["muted"]}"> last 7 days</tspan>')
+    if compact:   # narrow card: delta drops below the headline, secondary lines go
+        a(f'<text x="28" y="100" font-size="13">{delta_txt}</text>')
+    else:
+        nx = 28 + 16.5 * len(fmt(total)) + 12      # approx. advance of the 30px headline digits
+        a(f'<text x="{nx:.0f}" y="78" font-size="13">{delta_txt}</text>')
+        a(f'<text x="28" y="100" font-size="12" fill="{t["muted"]}">Peak day {fmt(max(all_days))} · peak week {fmt(peak_week)} · '
+          f'{active} active days</text>')
+        a(f'<text x="{W-28}" y="40" font-size="12" text-anchor="end" fill="{t["muted"]}">Updated {MONTHS[today.month-1]} {today.day}, {today.year}</text>')
     # price grid
     for v in ticks:
         a(f'<line x1="{LEFT}" x2="{W-RIGHT}" y1="{y(v):.1f}" y2="{y(v):.1f}" stroke="{t["grid"]}" shape-rendering="crispEdges"/>')
         a(f'<text x="{LEFT-10}" y="{y(v)+4:.1f}" font-size="11" text-anchor="end" fill="{t["muted"]}">{fmt(v)}</text>')
     a(f'<line x1="{LEFT}" x2="{W-RIGHT}" y1="{y(avg):.1f}" y2="{y(avg):.1f}" stroke="{t["ref"]}" stroke-dasharray="4 4" shape-rendering="crispEdges"/>')
-    a(f'<text x="{LEFT+6}" y="{y(avg)-5:.1f}" font-size="11" fill="{t["muted"]}">Avg {avg:.1f}/day</text>')
+    if not compact:   # no room for the label among narrow candles
+        a(f'<text x="{LEFT+6}" y="{y(avg)-5:.1f}" font-size="11" fill="{t["muted"]}">Avg {avg:.1f}/day</text>')
     # candles
     a('<g>')
     for i, c in enumerate(cs):
@@ -175,7 +186,9 @@ def self_test():
     quiet = [[("d", 0)] * 7] * 30 + [[("d", 50)] * 7] * 10
     assert len(trim(quiet)) == 26 and len(trim(quiet, min_weeks=5)) == 10
     for th in THEMES:
-        ET.fromstring(render(weeks, th, dt.date(2026, 5, 20)))   # well-formed XML
+        for size in LAYOUTS:
+            ET.fromstring(render(weeks, th, dt.date(2026, 5, 20), size))   # well-formed XML
+    assert 'width="360"' in render(weeks, "dark", dt.date(2026, 5, 20), "compact")
     print("self-test ok")
 
 
@@ -194,10 +207,11 @@ def main():
     today = dt.date.fromisoformat(weeks[-1][-1][0])
     os.makedirs(a.out, exist_ok=True)
     for th in THEMES:
-        path = os.path.join(a.out, f"contrib-candles-{th}.svg")
-        with open(path, "w") as f:
-            f.write(render(weeks, th, today) + "\n")
-        print("wrote", path)
+        for size in LAYOUTS:
+            path = os.path.join(a.out, f"contrib-candles-{th}{'-compact' * (size == 'compact')}.svg")
+            with open(path, "w") as f:
+                f.write(render(weeks, th, today, size) + "\n")
+            print("wrote", path)
 
 
 if __name__ == "__main__":

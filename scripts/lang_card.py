@@ -25,9 +25,9 @@ QUERIES = {
   repositories(first: 100, after: $after, isFork: false) { %s } } }""" % REPOS,
 }
 
-W, H = 880, 482
+LAYOUTS = {"full": dict(W=880, H=482, top_n=10), "compact": dict(W=360, H=470, top_n=7)}   # compact = phones
 TAPE_Y, TAPE_H, SLOT = 116, 26, 124   # ticker tape; every item gets a fixed slot so the loop is seamless
-MAP_X, MAP_Y, MAP_W, MAP_H = 24, 154, W - 48, H - 154 - 24
+MAP_X, MAP_Y = 24, 154
 GAP = 3
 TOP_N = 10
 TAPE_N = 14
@@ -111,10 +111,14 @@ def ink(hex_color):
     return ("#0d1117", "rgba(13,17,23,0.62)") if lum > 0.32 else ("#ffffff", "rgba(255,255,255,0.72)")
 
 
-def render(langs, n_repos, n_private, theme, today):
+def render(langs, n_repos, n_private, theme, today, size="full"):
     t = THEMES[theme]
+    L = LAYOUTS[size]
+    W, H, top_n = L["W"], L["H"], L["top_n"]
+    MAP_W, MAP_H = W - 2 * MAP_X, H - MAP_Y - 24
+    compact = size == "compact"
     total = sum(l["size"] for l in langs)
-    tiles = group(langs)
+    tiles = group(langs, top_n)
     rects = squarify([l["size"] for l in tiles], MAP_X, MAP_Y, MAP_W, MAP_H)
     lead = langs[0]
     over1 = sum(1 for l in langs if l["size"] / total >= 0.01)
@@ -124,7 +128,7 @@ def render(langs, n_repos, n_private, theme, today):
     a = s.append
     a(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="t d">')
     a('<title id="t">Most used languages</title>')
-    a('<desc id="d">' + escape("; ".join(f'{l["name"]} {l["size"] / total * 100:.1f}%' for l in langs[:TOP_N]))
+    a('<desc id="d">' + escape("; ".join(f'{l["name"]} {l["size"] / total * 100:.1f}%' for l in langs[:top_n]))
       + f' across {n_repos} repositories ({n_private} private).</desc>')
     a('<style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;'
       'font-variant-numeric:tabular-nums}'
@@ -147,16 +151,23 @@ def render(langs, n_repos, n_private, theme, today):
     a(f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="14" fill="{t["frame"]}" stroke="{t["border"]}"/>')
     a(f'<rect x="4.5" y="4.5" width="{W-9}" height="{H-9}" rx="10" fill="{t["panel"]}" stroke="{t["border"]}"/>')
     # header: market-dominance framing
-    a(f'<text x="28" y="40" font-size="13" fill="{t["muted"]}">Most used languages · by code size · {n_repos} repos · {n_private} private</text>')
-    a(f'<text x="{W-28}" y="40" font-size="12" text-anchor="end" fill="{t["muted"]}">Updated {MONTHS[today.month-1]} {today.day}, {today.year}</text>')
+    if compact:
+        a(f'<text x="28" y="40" font-size="13" fill="{t["muted"]}">Languages · {n_repos} repos · {n_private} private</text>')
+    else:
+        a(f'<text x="28" y="40" font-size="13" fill="{t["muted"]}">Most used languages · by code size · {n_repos} repos · {n_private} private</text>')
+        a(f'<text x="{W-28}" y="40" font-size="12" text-anchor="end" fill="{t["muted"]}">Updated {MONTHS[today.month-1]} {today.day}, {today.year}</text>')
     a(f'<circle cx="38" cy="68" r="22" fill="url(#halo)"/>')
     a(f'<circle cx="38" cy="68" r="7" fill="{lead["color"]}"/>')
     a(f'<text x="56" y="78" font-size="30" font-weight="500" letter-spacing="-0.6" fill="{t["fg"]}">{escape(lead["name"])}</text>')
-    nx = 56 + 15.5 * len(lead["name"]) + 12     # approx. advance of the 30px headline
-    a(f'<text x="{nx:.0f}" y="78" font-size="13"><tspan fill="{t["up"]}">{lead["size"] / total * 100:.1f}%</tspan>'
-      f'<tspan fill="{t["muted"]}"> dominance</tspan></text>')
-    a(f'<text x="28" y="102" font-size="12" fill="{t["muted"]}">{mb(total)} of code · {len(langs)} languages · '
-      f'{over1} above 1% · {escape(lead["name"])} in {lead["repos"]} repos</text>')
+    dom = (f'<tspan fill="{t["up"]}">{lead["size"] / total * 100:.1f}%</tspan>'
+           f'<tspan fill="{t["muted"]}"> dominance</tspan>')
+    if compact:   # narrow card: dominance moves under the headline
+        a(f'<text x="28" y="102" font-size="13">{dom}<tspan fill="{t["muted"]}"> · {mb(total)} of code</tspan></text>')
+    else:
+        nx = 56 + 15.5 * len(lead["name"]) + 12     # approx. advance of the 30px headline
+        a(f'<text x="{nx:.0f}" y="78" font-size="13">{dom}</text>')
+        a(f'<text x="28" y="102" font-size="12" fill="{t["muted"]}">{mb(total)} of code · {len(langs)} languages · '
+          f'{over1} above 1% · {escape(lead["name"])} in {lead["repos"]} repos</text>')
     # ticker tape: enough copies of the list to cover the strip twice, scrolled by exactly one list width
     tape = langs[:TAPE_N]
     copies = -(-MAP_W // (len(tape) * SLOT)) + 1
@@ -229,7 +240,9 @@ def self_test():
     assert len(g) == 8 and g[-1]["size"] == 12 and g[-1].get("other")
     assert ink("#f1e05a")[0] == "#0d1117" and ink("#3178c6")[0] == "#ffffff"
     for th in THEMES:
-        ET.fromstring(render(langs, 84, 44, th, dt.date(2026, 10, 16)))
+        for size in LAYOUTS:
+            ET.fromstring(render(langs, 84, 44, th, dt.date(2026, 10, 16), size))
+    assert 'width="360"' in render(langs, 84, 44, "dark", dt.date(2026, 10, 16), "compact")
     print("self-test ok")
 
 
@@ -254,10 +267,11 @@ def main():
     today = dt.datetime.now(dt.timezone.utc).date()
     os.makedirs(a.out, exist_ok=True)
     for th in THEMES:
-        path = os.path.join(a.out, f"top-langs-{th}.svg")
-        with open(path, "w") as f:
-            f.write(render(langs, n_repos, n_private, th, today) + "\n")
-        print("wrote", path)
+        for size in LAYOUTS:
+            path = os.path.join(a.out, f"top-langs-{th}{'-compact' * (size == 'compact')}.svg")
+            with open(path, "w") as f:
+                f.write(render(langs, n_repos, n_private, th, today, size) + "\n")
+            print("wrote", path)
 
 
 if __name__ == "__main__":

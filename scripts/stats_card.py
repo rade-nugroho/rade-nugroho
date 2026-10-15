@@ -22,7 +22,7 @@ QUERY = """query($login: String!) { user(login: $login) {
     totalPullRequestReviewContributions contributionCalendar { totalContributions
       weeks { contributionDays { date contributionCount } } } } } }"""
 
-W, H = 880, 300
+LAYOUTS = {"full": dict(W=880, H=300), "compact": dict(W=360, H=496)}   # compact = phones
 MIX = [("Commits", "commits", "#3fb950"), ("Pull requests", "prs", "#58a6ff"),
        ("Issues", "issues", "#d29922"), ("Reviews", "reviews", "#bc8cff"),
        ("Private & other", "other", None)]   # None = theme's muted colour
@@ -63,8 +63,10 @@ def streaks(days):
     return current, longest
 
 
-def render(s, theme, today):
+def render(s, theme, today, size="full"):
     t = THEMES[theme]
+    W, H = LAYOUTS[size]["W"], LAYOUTS[size]["H"]
+    compact = size == "compact"
     cur, best = streaks(s["days"])
     since = dt.date.fromisoformat(s["since"])
     # the calendar total includes private contributions the token can't itemise; show them as one segment
@@ -85,13 +87,16 @@ def render(s, theme, today):
     # header
     a(f'<text x="28" y="40" font-size="13" fill="{t["muted"]}">GitHub stats · member since '
       f'{MONTHS[since.month-1]} {since.year}</text>')
-    a(f'<text x="{W-28}" y="40" font-size="12" text-anchor="end" fill="{t["muted"]}">Updated {MONTHS[today.month-1]} {today.day}, {today.year}</text>')
     a(f'<text x="28" y="78" font-size="30" font-weight="500" letter-spacing="-0.6" fill="{t["fg"]}">{fmt(s["total"])}</text>')
-    nx = 28 + 16.5 * len(fmt(s["total"])) + 12
-    a(f'<text x="{nx:.0f}" y="78" font-size="13" fill="{t["muted"]}">contributions in the last year · '
-      f'<tspan fill="{t["fg"]}">{fmt(s["commits"])}</tspan> public commits</text>')
+    commits = f'<tspan fill="{t["fg"]}">{fmt(s["commits"])}</tspan> public commits'
+    if compact:   # narrow card: subline under the headline, no date
+        a(f'<text x="28" y="100" font-size="13" fill="{t["muted"]}">contributions · {commits}</text>')
+    else:
+        a(f'<text x="{W-28}" y="40" font-size="12" text-anchor="end" fill="{t["muted"]}">Updated {MONTHS[today.month-1]} {today.day}, {today.year}</text>')
+        nx = 28 + 16.5 * len(fmt(s["total"])) + 12
+        a(f'<text x="{nx:.0f}" y="78" font-size="13" fill="{t["muted"]}">contributions in the last year · {commits}</text>')
     # contribution mix: allocation bar + legend
-    x0, bw, by = 28, W - 56, 100
+    x0, bw, by = 28, W - 56, (114 if compact else 100)
     a(f'<rect x="{x0}" y="{by}" width="{bw}" height="10" rx="5" fill="{t["grid"]}"/>')
     # private segment is hatched: counted, but not itemisable by the token
     a(f'<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">'
@@ -105,35 +110,51 @@ def render(s, theme, today):
         a(f'<rect x="{x:.1f}" y="{by}" width="{max(0.0, w - 2):.1f}" height="10" fill="{fill}"/>')
         x += w
     a('</g>')
-    lx = x0
+    lx, ly = x0, by + 27
     for label, k, col in MIX:
         col = col or t["muted"]
         txt = f'{label} {s[k] / mix_total * 100:.0f}%'
-        a(f'<circle cx="{lx+4}" cy="{by+27}" r="4" fill="{col}"/>')
-        a(f'<text x="{lx+13}" y="{by+31}" font-size="12" fill="{t["muted"]}">{escape(txt)}</text>')
-        lx += 13 + len(txt) * 6.6 + 22
+        item_w = 13 + len(txt) * 6.6                 # approx. width of the 12px label
+        if lx > x0 and lx + item_w > x0 + bw:          # wrap onto a new legend row
+            lx, ly = x0, ly + 18
+        a(f'<circle cx="{lx+4}" cy="{ly}" r="4" fill="{col}"/>')
+        a(f'<text x="{lx+13}" y="{ly+4}" font-size="12" fill="{t["muted"]}">{escape(txt)}</text>')
+        lx += item_w + 22
     # KPI tiles
-    tiles = [("Contributed to", fmt(s["contributed"]), "public repositories"),
-             ("Stars earned", fmt(s["stars"]), f'{fmt(s["forks"])} forks'),
-             ("Followers", fmt(s["followers"]), "on GitHub"),
-             ("Current streak", f"{cur}d", "days in a row"),
-             ("Longest streak", f"{best}d", "best run")]
-    gap, ty, th = 10, 156, 112
-    tw = (W - 56 - gap * (len(tiles) - 1)) / len(tiles)
+    tiles = {"contributed": ("Contributed to", fmt(s["contributed"]), "public repositories"),
+             "stars": ("Stars earned", fmt(s["stars"]), f'{fmt(s["forks"])} forks'),
+             "followers": ("Followers", fmt(s["followers"]), "on GitHub"),
+             "current": ("Current streak", f"{cur}d", "days in a row"),
+             "longest": ("Longest streak", f"{best}d", "best run")}
+    gap = 10
+    if compact:   # 2x2 grid, then the current streak full width
+        tw, th, ty = (W - 56 - gap) / 2, 84, ly + 26
+        cells = [("contributed", 0, 0, 1), ("stars", 1, 0, 1), ("followers", 0, 1, 1), ("longest", 1, 1, 1), ("current", 0, 2, 2)]
+    else:         # one row of five
+        tw, th, ty = (W - 56 - gap * 4) / 5, 112, 156
+        cells = [(k, i, 0, 1) for i, k in enumerate(["contributed", "stars", "followers", "current", "longest"])]
     recent = s["days"][-14:]
-    for i, (label, value, sub) in enumerate(tiles):
-        tx = 28 + i * (tw + gap)
-        a(f'<rect x="{tx:.1f}" y="{ty}" width="{tw:.1f}" height="{th}" rx="10" fill="{t["frame"]}" stroke="{t["border"]}"/>')
-        a(f'<text x="{tx+14:.1f}" y="{ty+26}" font-size="12" fill="{t["muted"]}">{label}</text>')
-        a(f'<text x="{tx+14:.1f}" y="{ty+62}" font-size="28" font-weight="500" letter-spacing="-0.5" fill="{t["fg"]}">{value}</text>')
-        if label == "Current streak":       # last 14 days as contribution cells, today on the right
-            cw = (tw - 28 - 13 * 3) / 14
+    for key, col_i, row_i, span in cells:
+        label, value, sub = tiles[key]
+        tx, y0 = 28 + col_i * (tw + gap), ty + row_i * (th + gap)
+        w = tw * span + gap * (span - 1)
+        vy = y0 + (56 if compact else 62)
+        a(f'<rect x="{tx:.1f}" y="{y0:.1f}" width="{w:.1f}" height="{th}" rx="10" fill="{t["frame"]}" stroke="{t["border"]}"/>')
+        a(f'<text x="{tx+14:.1f}" y="{y0+24:.1f}" font-size="12" fill="{t["muted"]}">{label}</text>')
+        a(f'<text x="{tx+14:.1f}" y="{vy:.1f}" font-size="{26 if compact else 28}" font-weight="500" letter-spacing="-0.5" fill="{t["fg"]}">{value}</text>')
+        if key == "current":       # last 14 days as contribution cells, today on the right
+            if compact:            # cells sit right of the value
+                cx0, cy = tx + 130, y0 + 40
+                cw = (w - 144 - 13 * 3) / 14
+            else:
+                cx0, cy = tx + 14, y0 + 82
+                cw = (w - 28 - 13 * 3) / 14
             for j, n in enumerate(recent):
                 op = 0.18 if not n else min(1.0, 0.35 + n / max(recent) * 0.65)
-                a(f'<rect x="{tx+14+j*(cw+3):.1f}" y="{ty+82}" width="{cw:.1f}" height="{cw:.1f}" rx="2" '
+                a(f'<rect x="{cx0+j*(cw+3):.1f}" y="{cy:.1f}" width="{cw:.1f}" height="{cw:.1f}" rx="2" '
                   f'fill="{t["up"] if n else t["muted"]}" fill-opacity="{op:.2f}"/>')
         else:
-            a(f'<text x="{tx+14:.1f}" y="{ty+94}" font-size="12" fill="{t["muted"]}">{sub}</text>')
+            a(f'<text x="{tx+14:.1f}" y="{y0+(74 if compact else 94):.1f}" font-size="12" fill="{t["muted"]}">{sub}</text>')
     a('</svg>')
     return "\n".join(o)
 
@@ -147,7 +168,9 @@ def self_test():
     s = dict(since="2026-05-02", followers=14, stars=46, forks=18, contributed=122, commits=2864, prs=1657,
              issues=446, reviews=32, total=5112, days=[(i * 7) % 5 for i in range(120)])
     for th in THEMES:
-        ET.fromstring(render(s, th, dt.date(2026, 10, 16)))
+        for size in LAYOUTS:
+            ET.fromstring(render(s, th, dt.date(2026, 10, 16), size))
+    assert 'width="360"' in render(s, "dark", dt.date(2026, 10, 16), "compact")
     print("self-test ok")
 
 
@@ -166,10 +189,11 @@ def main():
     today = dt.datetime.now(dt.timezone.utc).date()
     os.makedirs(a.out, exist_ok=True)
     for th in THEMES:
-        path = os.path.join(a.out, f"github-stats-{th}.svg")
-        with open(path, "w") as f:
-            f.write(render(s, th, today) + "\n")
-        print("wrote", path)
+        for size in LAYOUTS:
+            path = os.path.join(a.out, f"github-stats-{th}{'-compact' * (size == 'compact')}.svg")
+            with open(path, "w") as f:
+                f.write(render(s, th, today, size) + "\n")
+            print("wrote", path)
 
 
 if __name__ == "__main__":

@@ -27,6 +27,8 @@
 ## GitHub stats
 
 <picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/github-stats-dark-compact.svg" />
+  <source media="(max-width: 600px)" srcset="assets/github-stats-light-compact.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/github-stats-dark.svg" />
   <img width="100%" alt="GitHub stats: commits, pull requests, issues and reviews mix, repositories contributed to, stars, followers and contribution streaks" src="assets/github-stats-light.svg" />
 </picture>
@@ -34,6 +36,8 @@
 ## Most used languages
 
 <picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/top-langs-dark-compact.svg" />
+  <source media="(max-width: 600px)" srcset="assets/top-langs-light-compact.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/top-langs-dark.svg" />
   <img width="100%" alt="Treemap of most used languages across personal and TANTIRA repositories, led by TypeScript" src="assets/top-langs-light.svg" />
 </picture>
@@ -41,6 +45,8 @@
 ## Activity
 
 <picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/contrib-candles-dark-compact.svg" />
+  <source media="(max-width: 600px)" srcset="assets/contrib-candles-light-compact.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/contrib-candles-dark.svg" />
   <img width="100%" alt="Weekly contribution candlestick chart with volume for rade-nugroho" src="assets/contrib-candles-light.svg" />
 </picture>
