@@ -39,8 +39,8 @@
 ## Activity
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://readme-activity-graph.vercel.app/graph?username=rade-nugroho&bg_color=0d1117&color=c9d1d9&line=58a6ff&point=58a6ff&area=true&hide_border=true" />
-  <img alt="Contribution activity graph for rade-nugroho" src="https://readme-activity-graph.vercel.app/graph?username=rade-nugroho&bg_color=ffffff&color=24292f&line=0969da&point=0969da&area=true&hide_border=true" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/contrib-candles-dark.svg" />
+  <img width="100%" alt="Weekly contribution candlestick chart with volume for rade-nugroho" src="assets/contrib-candles-light.svg" />
 </picture>
 
 <sub>Last updated: October 2026</sub>
