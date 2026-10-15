@@ -1,35 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="300" viewBox="0 0 880 300" role="img" aria-labelledby="t d">
 <title id="t">GitHub stats</title>
-<desc id="d">5,164 contributions in the last year: 2,913 commits, 1,660 pull requests, 446 issues, 32 reviews, 113 private or other; contributed to 122 repositories; 46 stars; 14 followers; current streak 136 days, longest 136 days.</desc>
+<desc id="d">5,145 contributions in the last year: 605 commits, 475 pull requests, 183 issues, 6 reviews, 3,876 private or other; contributed to 19 repositories; 46 stars; 14 followers; current streak 135 days, longest 135 days.</desc>
 <style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;font-variant-numeric:tabular-nums}</style>
 <rect x="0.5" y="0.5" width="879" height="299" rx="14" fill="#010409" stroke="#30363d"/>
 <rect x="4.5" y="4.5" width="871" height="291" rx="10" fill="#0d1117" stroke="#30363d"/>
 <text x="28" y="40" font-size="13" fill="#9198a1">GitHub stats · member since May 2026</text>
-<text x="28" y="78" font-size="30" font-weight="500" letter-spacing="-0.6" fill="#f0f6fc">5,164</text>
+<text x="28" y="78" font-size="30" font-weight="500" letter-spacing="-0.6" fill="#f0f6fc">5,145</text>
 <text x="852" y="40" font-size="12" text-anchor="end" fill="#9198a1">Updated Oct 15, 2026</text>
-<text x="122" y="78" font-size="13" fill="#9198a1">contributions in the last year · <tspan fill="#f0f6fc">2,913</tspan> public commits</text>
+<text x="122" y="78" font-size="13" fill="#9198a1">contributions in the last year · <tspan fill="#f0f6fc">605</tspan> public commits</text>
 <rect x="28" y="100" width="824" height="10" rx="5" fill="#21262d"/>
 <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#9198a1" fill-opacity="0.35"/><rect width="2.5" height="6" fill="#9198a1"/></pattern>
 <clipPath id="mix"><rect x="28" y="100" width="824" height="10" rx="5"/></clipPath><g clip-path="url(#mix)">
-<rect x="28.0" y="100" width="462.8" height="10" fill="#3fb950"/>
-<rect x="492.8" y="100" width="262.9" height="10" fill="#58a6ff"/>
-<rect x="757.7" y="100" width="69.2" height="10" fill="#d29922"/>
-<rect x="828.9" y="100" width="3.1" height="10" fill="#bc8cff"/>
-<rect x="834.0" y="100" width="16.0" height="10" fill="url(#hatch)"/>
+<rect x="28.0" y="100" width="94.9" height="10" fill="#3fb950"/>
+<rect x="124.9" y="100" width="74.1" height="10" fill="#58a6ff"/>
+<rect x="201.0" y="100" width="27.3" height="10" fill="#d29922"/>
+<rect x="230.3" y="100" width="0.0" height="10" fill="#bc8cff"/>
+<rect x="231.2" y="100" width="618.8" height="10" fill="url(#hatch)"/>
 </g>
 <circle cx="32" cy="127" r="4" fill="#3fb950"/>
-<text x="41" y="131" font-size="12" fill="#9198a1">Commits 56%</text>
+<text x="41" y="131" font-size="12" fill="#9198a1">Commits 12%</text>
 <circle cx="139.6" cy="127" r="4" fill="#58a6ff"/>
-<text x="148.6" y="131" font-size="12" fill="#9198a1">Pull requests 32%</text>
-<circle cx="286.79999999999995" cy="127" r="4" fill="#d29922"/>
-<text x="295.79999999999995" y="131" font-size="12" fill="#9198a1">Issues 9%</text>
-<circle cx="381.19999999999993" cy="127" r="4" fill="#bc8cff"/>
-<text x="390.19999999999993" y="131" font-size="12" fill="#9198a1">Reviews 1%</text>
-<circle cx="482.19999999999993" cy="127" r="4" fill="#9198a1"/>
-<text x="491.19999999999993" y="131" font-size="12" fill="#9198a1">Private &amp; other 2%</text>
+<text x="148.6" y="131" font-size="12" fill="#9198a1">Pull requests 9%</text>
+<circle cx="280.2" cy="127" r="4" fill="#d29922"/>
+<text x="289.2" y="131" font-size="12" fill="#9198a1">Issues 4%</text>
+<circle cx="374.6" cy="127" r="4" fill="#bc8cff"/>
+<text x="383.6" y="131" font-size="12" fill="#9198a1">Reviews 0%</text>
+<circle cx="475.6" cy="127" r="4" fill="#9198a1"/>
+<text x="484.6" y="131" font-size="12" fill="#9198a1">Private &amp; other 75%</text>
 <rect x="28.0" y="156.0" width="156.8" height="112" rx="10" fill="#010409" stroke="#30363d"/>
 <text x="42.0" y="180.0" font-size="12" fill="#9198a1">Contributed to</text>
-<text x="42.0" y="218.0" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#f0f6fc">122</text>
+<text x="42.0" y="218.0" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#f0f6fc">19</text>
 <text x="42.0" y="250.0" font-size="12" fill="#9198a1">public repositories</text>
 <rect x="194.8" y="156.0" width="156.8" height="112" rx="10" fill="#010409" stroke="#30363d"/>
 <text x="208.8" y="180.0" font-size="12" fill="#9198a1">Stars earned</text>
@@ -41,23 +41,23 @@
 <text x="375.6" y="250.0" font-size="12" fill="#9198a1">on GitHub</text>
 <rect x="528.4" y="156.0" width="156.8" height="112" rx="10" fill="#010409" stroke="#30363d"/>
 <text x="542.4" y="180.0" font-size="12" fill="#9198a1">Current streak</text>
-<text x="542.4" y="218.0" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#f0f6fc">136d</text>
-<rect x="542.4" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.36"/>
-<rect x="551.8" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.65"/>
-<rect x="561.2" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.38"/>
-<rect x="570.6" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.56"/>
-<rect x="580.1" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.38"/>
+<text x="542.4" y="218.0" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#f0f6fc">135d</text>
+<rect x="542.4" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.39"/>
+<rect x="551.8" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.36"/>
+<rect x="561.2" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.65"/>
+<rect x="570.6" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.38"/>
+<rect x="580.1" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.56"/>
 <rect x="589.5" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.38"/>
-<rect x="598.9" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.53"/>
-<rect x="608.3" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="1.00"/>
-<rect x="617.7" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.55"/>
-<rect x="627.1" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.59"/>
-<rect x="636.5" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.66"/>
-<rect x="646.0" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.76"/>
-<rect x="655.4" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.99"/>
-<rect x="664.8" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.41"/>
+<rect x="598.9" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.38"/>
+<rect x="608.3" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.54"/>
+<rect x="617.7" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="1.00"/>
+<rect x="627.1" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.55"/>
+<rect x="636.5" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.59"/>
+<rect x="646.0" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.65"/>
+<rect x="655.4" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.76"/>
+<rect x="664.8" y="238.0" width="6.4" height="6.4" rx="2" fill="#3fb950" fill-opacity="0.99"/>
 <rect x="695.2" y="156.0" width="156.8" height="112" rx="10" fill="#010409" stroke="#30363d"/>
 <text x="709.2" y="180.0" font-size="12" fill="#9198a1">Longest streak</text>
-<text x="709.2" y="218.0" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#f0f6fc">136d</text>
+<text x="709.2" y="218.0" font-size="28" font-weight="500" letter-spacing="-0.5" fill="#f0f6fc">135d</text>
 <text x="709.2" y="250.0" font-size="12" fill="#9198a1">best run</text>
 </svg>
