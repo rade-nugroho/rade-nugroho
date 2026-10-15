@@ -1,4 +1,4 @@
-name: Contribution candles
+name: Profile charts
 
 on:
   schedule:
@@ -21,16 +21,25 @@ jobs:
         with:
           python-version: "3.12"
       - name: Self-test
-        run: python scripts/contrib_candles.py --self-test
-      - name: Render
+        run: |
+          python scripts/contrib_candles.py --self-test
+          python scripts/lang_card.py --self-test
+      - name: Render contribution candles
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/contrib_candles.py --login "${{ github.repository_owner }}" --out assets
+      - name: Render languages (needs read access to private TANTIRA repos)
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN }}
+        run: |
+          # without the secret only public repos are visible; keep the committed card instead of shrinking it
+          if [ -z "$GITHUB_TOKEN" ]; then echo "::warning::PROFILE_STATS_TOKEN not set; language card not refreshed"; exit 0; fi
+          python scripts/lang_card.py --login "${{ github.repository_owner }}" --org TANTIRA --out assets
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/contrib-candles-*.svg
+          git add assets/contrib-candles-*.svg assets/top-langs-*.svg
           git diff --cached --quiet && echo "no change" && exit 0
-          git commit -m "chore: refresh contribution candles"
+          git commit -m "chore: refresh profile charts"
           git push

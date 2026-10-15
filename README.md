@@ -36,6 +36,13 @@
 | **[Agentic-Enteprises-Skill](https://github.com/rade-nugroho/Agentic-Enteprises-Skill)** | An agent skill for enterprise workflows. | Python |
 | **[Octo](https://github.com/TANTIRA/OCTO)** | A machine-verifiable book of record for machine-native money. | Kotlin |
 
+## Most used languages
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/top-langs-dark.svg" />
+  <img width="100%" alt="Treemap of most used languages across public repositories, led by TypeScript" src="assets/top-langs-light.svg" />
+</picture>
+
 ## Activity
 
 <picture>
