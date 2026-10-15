@@ -9,6 +9,7 @@ import json
 import os
 import sys
 import urllib.request
+from xml.sax.saxutils import escape
 
 from contrib_candles import MONTHS, THEMES, fmt
 
@@ -23,7 +24,8 @@ QUERY = """query($login: String!) { user(login: $login) {
 
 W, H = 880, 300
 MIX = [("Commits", "commits", "#3fb950"), ("Pull requests", "prs", "#58a6ff"),
-       ("Issues", "issues", "#d29922"), ("Reviews", "reviews", "#bc8cff")]
+       ("Issues", "issues", "#d29922"), ("Reviews", "reviews", "#bc8cff"),
+       ("Private & other", "other", None)]   # None = theme's muted colour
 
 
 def fetch(login, token):
@@ -65,14 +67,16 @@ def render(s, theme, today):
     t = THEMES[theme]
     cur, best = streaks(s["days"])
     since = dt.date.fromisoformat(s["since"])
+    # the calendar total includes private contributions the token can't itemise; show them as one segment
+    s = dict(s, other=max(0, s["total"] - s["commits"] - s["prs"] - s["issues"] - s["reviews"]))
     mix_total = sum(s[k] for _, k, _ in MIX) or 1
 
     o = []
     a = o.append
     a(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="t d">')
     a('<title id="t">GitHub stats</title>')
-    a(f'<desc id="d">{fmt(s["commits"])} commits, {fmt(s["prs"])} pull requests, {fmt(s["issues"])} issues, '
-      f'{fmt(s["reviews"])} reviews; contributed to {s["contributed"]} repositories; {s["stars"]} stars; '
+    a(f'<desc id="d">{fmt(s["total"])} contributions in the last year: {fmt(s["commits"])} commits, {fmt(s["prs"])} pull requests, {fmt(s["issues"])} issues, '
+      f'{fmt(s["reviews"])} reviews, {fmt(s["other"])} private or other; contributed to {s["contributed"]} repositories; {s["stars"]} stars; '
       f'{s["followers"]} followers; current streak {cur} days, longest {best} days.</desc>')
     a('<style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;'
       'font-variant-numeric:tabular-nums}</style>')
@@ -82,28 +86,34 @@ def render(s, theme, today):
     a(f'<text x="28" y="40" font-size="13" fill="{t["muted"]}">GitHub stats · member since '
       f'{MONTHS[since.month-1]} {since.year}</text>')
     a(f'<text x="{W-28}" y="40" font-size="12" text-anchor="end" fill="{t["muted"]}">Updated {MONTHS[today.month-1]} {today.day}, {today.year}</text>')
-    a(f'<text x="28" y="78" font-size="30" font-weight="500" letter-spacing="-0.6" fill="{t["fg"]}">{fmt(s["commits"])}</text>')
-    nx = 28 + 16.5 * len(fmt(s["commits"])) + 12
-    a(f'<text x="{nx:.0f}" y="78" font-size="13" fill="{t["muted"]}">commits · '
-      f'<tspan fill="{t["fg"]}">{fmt(s["prs"])}</tspan> pull requests in the last year</text>')
+    a(f'<text x="28" y="78" font-size="30" font-weight="500" letter-spacing="-0.6" fill="{t["fg"]}">{fmt(s["total"])}</text>')
+    nx = 28 + 16.5 * len(fmt(s["total"])) + 12
+    a(f'<text x="{nx:.0f}" y="78" font-size="13" fill="{t["muted"]}">contributions in the last year · '
+      f'<tspan fill="{t["fg"]}">{fmt(s["commits"])}</tspan> public commits</text>')
     # contribution mix: allocation bar + legend
     x0, bw, by = 28, W - 56, 100
     a(f'<rect x="{x0}" y="{by}" width="{bw}" height="10" rx="5" fill="{t["grid"]}"/>')
+    # private segment is hatched: counted, but not itemisable by the token
+    a(f'<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">'
+      f'<rect width="6" height="6" fill="{t["muted"]}" fill-opacity="0.35"/><rect width="2.5" height="6" fill="{t["muted"]}"/></pattern>')
     a(f'<clipPath id="mix"><rect x="{x0}" y="{by}" width="{bw}" height="10" rx="5"/></clipPath><g clip-path="url(#mix)">')
     x = x0
     for _, k, col in MIX:
+        col = col or t["muted"]
         w = s[k] / mix_total * bw
-        a(f'<rect x="{x:.1f}" y="{by}" width="{max(0.0, w - 2):.1f}" height="10" fill="{col}"/>')
+        fill = "url(#hatch)" if k == "other" else col
+        a(f'<rect x="{x:.1f}" y="{by}" width="{max(0.0, w - 2):.1f}" height="10" fill="{fill}"/>')
         x += w
     a('</g>')
     lx = x0
     for label, k, col in MIX:
+        col = col or t["muted"]
         txt = f'{label} {s[k] / mix_total * 100:.0f}%'
         a(f'<circle cx="{lx+4}" cy="{by+27}" r="4" fill="{col}"/>')
-        a(f'<text x="{lx+13}" y="{by+31}" font-size="12" fill="{t["muted"]}">{txt}</text>')
+        a(f'<text x="{lx+13}" y="{by+31}" font-size="12" fill="{t["muted"]}">{escape(txt)}</text>')
         lx += 13 + len(txt) * 6.6 + 22
     # KPI tiles
-    tiles = [("Contributed to", fmt(s["contributed"]), "repositories"),
+    tiles = [("Contributed to", fmt(s["contributed"]), "public repositories"),
              ("Stars earned", fmt(s["stars"]), f'{fmt(s["forks"])} forks'),
              ("Followers", fmt(s["followers"]), "on GitHub"),
              ("Current streak", f"{cur}d", "days in a row"),
