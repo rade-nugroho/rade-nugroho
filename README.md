@@ -24,6 +24,13 @@
 - **[daemonprotocol](https://github.com/daemonprotocol)**: decision intelligence for AML and compliance investigations, covering data fusion, entity resolution, graph analytics and case management.
 - **Open source**: deterministic Solana program auditing, agentic OSINT and detection engineering.
 
+## GitHub stats
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/github-stats-dark.svg" />
+  <img width="100%" alt="GitHub stats: commits, pull requests, issues and reviews mix, repositories contributed to, stars, followers and contribution streaks" src="assets/github-stats-light.svg" />
+</picture>
+
 ## Most used languages
 
 <picture>
