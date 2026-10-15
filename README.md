@@ -2,11 +2,9 @@
 <div align="center">
 
 <picture>
-  <source srcset="assets/lucy-3d-v1.webp" type="image/webp" />
-  <img src="assets/lucy-3d-v1.gif" width="320" alt="Animated 3D Lucy from Cyberpunk: Edgerunners, breathing and blinking as the camera slowly orbits" />
+  <source srcset="assets/lucy-3d-v2.webp" type="image/webp" />
+  <img src="assets/lucy-3d-v2.gif" width="320" alt="Animated 3D Lucy from Cyberpunk: Edgerunners smirking and pointing at the viewer as the camera slowly orbits" />
 </picture>
-
-<sub>Lucy fan art (<i>Cyberpunk: Edgerunners</i>). This is an unofficial fan work and is not approved/endorsed by CD PROJEKT RED.</sub>
 
 # Rade Nugroho
 
