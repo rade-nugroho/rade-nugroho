@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" role="img" aria-labelledby="t d">
 <title id="t">Weekly contribution candles for the last 26 weeks</title>
-<desc id="d">7,621 contributions; last 7 days 1,418 (+24.4% vs the 7 days before). Peak day 428, peak week 1,196.</desc>
+<desc id="d">8,348 contributions; last 7 days 1,717 (+27.6% vs the 7 days before). Peak day 485, peak week 1,489.</desc>
 <style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;font-variant-numeric:tabular-nums}</style>
 <rect x="0.5" y="0.5" width="879" height="469" rx="14" fill="#f6f8fa" stroke="#d0d7de"/>
 <rect x="4.5" y="4.5" width="871" height="461" rx="10" fill="#ffffff" stroke="#d0d7de"/>
 <text x="28" y="40" font-size="13" fill="#59636e">Contributions · weekly candles · 26W</text>
-<text x="28" y="78" font-size="30" font-weight="500" letter-spacing="-0.6" fill="#1f2328">7,621</text>
-<text x="122" y="78" font-size="13"><tspan fill="#1a7f37">+278 (+24.4%)</tspan><tspan fill="#59636e"> last 7 days</tspan></text>
-<text x="28" y="100" font-size="12" fill="#59636e">Peak day 428 · peak week 1,196 · 159 active days</text>
-<text x="852" y="40" font-size="12" text-anchor="end" fill="#59636e">Updated Oct 29, 2026</text>
+<text x="28" y="78" font-size="30" font-weight="500" letter-spacing="-0.6" fill="#1f2328">8,348</text>
+<text x="122" y="78" font-size="13"><tspan fill="#1a7f37">+371 (+27.6%)</tspan><tspan fill="#59636e"> last 7 days</tspan></text>
+<text x="28" y="100" font-size="12" fill="#59636e">Peak day 485 · peak week 1,489 · 160 active days</text>
+<text x="852" y="40" font-size="12" text-anchor="end" fill="#59636e">Updated Oct 30, 2026</text>
 <line x1="64" x2="808" y1="352.0" y2="352.0" stroke="#eaeef2" shape-rendering="crispEdges"/>
 <text x="54" y="356.0" font-size="11" text-anchor="end" fill="#59636e">0</text>
 <line x1="64" x2="808" y1="278.7" y2="278.7" stroke="#eaeef2" shape-rendering="crispEdges"/>
@@ -17,8 +17,8 @@
 <text x="54" y="209.3" font-size="11" text-anchor="end" fill="#59636e">400</text>
 <line x1="64" x2="808" y1="132.0" y2="132.0" stroke="#eaeef2" shape-rendering="crispEdges"/>
 <text x="54" y="136.0" font-size="11" text-anchor="end" fill="#59636e">600</text>
-<line x1="64" x2="808" y1="336.5" y2="336.5" stroke="#c9d1d9" stroke-dasharray="4 4" shape-rendering="crispEdges"/>
-<text x="70" y="331.5" font-size="11" fill="#59636e">Avg 42.3/day</text>
+<line x1="64" x2="808" y1="335.1" y2="335.1" stroke="#c9d1d9" stroke-dasharray="4 4" shape-rendering="crispEdges"/>
+<text x="70" y="330.1" font-size="11" fill="#59636e">Avg 46.1/day</text>
 <g>
 <line x1="78.3" x2="78.3" y1="350.9" y2="352.0" stroke="#1a7f37" stroke-width="1.25"/>
 <rect x="71.3" y="350.9" width="14.0" height="1.1" rx="1" fill="#1a7f37"/>
@@ -95,13 +95,13 @@
 <line x1="765.1" x2="765.1" y1="195.1" y2="332.9" stroke="#1a7f37" stroke-width="1.25"/>
 <rect x="758.1" y="268.4" width="14.0" height="26.0" rx="1" fill="#1a7f37"/>
 <rect x="758.1" y="398.5" width="14.0" height="33.5" rx="1" fill="#1a7f37" fill-opacity="0.45"/>
-<line x1="793.7" x2="793.7" y1="209.4" y2="327.8" stroke="#cf222e" stroke-width="1.25"/>
-<rect x="786.7" y="209.4" width="14.0" height="118.4" rx="1" fill="#cf222e"/>
-<rect x="786.7" y="410.7" width="14.0" height="21.3" rx="1" fill="#cf222e" fill-opacity="1"/>
+<line x1="793.7" x2="793.7" y1="174.2" y2="320.8" stroke="#cf222e" stroke-width="1.25"/>
+<rect x="786.7" y="209.4" width="14.0" height="29.7" rx="1" fill="#cf222e"/>
+<rect x="786.7" y="390.3" width="14.0" height="41.7" rx="1" fill="#cf222e" fill-opacity="1"/>
 </g>
-<line x1="793.7" x2="812" y1="327.8" y2="327.8" stroke="#cf222e" stroke-dasharray="2 3"/>
-<rect x="812" y="317.8" width="44" height="20" rx="5" fill="#cf222e"/>
-<text x="834" y="331.8" font-size="11" font-weight="600" text-anchor="middle" fill="#ffffff">66</text>
+<line x1="793.7" x2="812" y1="239.1" y2="239.1" stroke="#cf222e" stroke-dasharray="2 3"/>
+<rect x="812" y="229.1" width="44" height="20" rx="5" fill="#cf222e"/>
+<text x="834" y="243.1" font-size="11" font-weight="600" text-anchor="middle" fill="#ffffff">308</text>
 <text x="54" y="386" font-size="11" text-anchor="end" fill="#59636e">Vol</text>
 <text x="54" y="400" font-size="11" text-anchor="end" fill="#59636e">1,500</text>
 <text x="78.3" y="452" font-size="11" text-anchor="middle" fill="#59636e">May</text>
