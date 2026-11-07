@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="482" viewBox="0 0 880 482" role="img" aria-labelledby="t d">
 <title id="t">Most used languages</title>
-<desc id="d">TypeScript 32.9%; Python 18.8%; JavaScript 14.5%; PHP 9.1%; Rust 6.4%; HTML 4.6%; Go 3.5%; PLpgSQL 2.3%; Handlebars 1.9%; CSS 1.3% across 91 repositories (44 private).</desc>
+<desc id="d">TypeScript 32.8%; Python 19.5%; JavaScript 14.8%; PHP 9.4%; Rust 5.0%; HTML 4.7%; Go 3.6%; PLpgSQL 2.3%; Handlebars 1.9%; CSS 1.3% across 90 repositories (43 private).</desc>
 <style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;font-variant-numeric:tabular-nums}.sh{animation:sh 7s cubic-bezier(.45,0,.2,1) infinite}@keyframes sh{0%{transform:translateX(-260px)}55%,100%{transform:translateX(1140px)}}.tp{animation:tp 31s linear infinite}@keyframes tp{to{transform:translateX(-1736px)}}@media (prefers-reduced-motion:reduce){.sh,.tp{animation:none}}</style>
 <defs>
 <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.16"/><stop offset="0.45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.18"/></linearGradient>
@@ -11,136 +11,135 @@
 </defs>
 <rect x="0.5" y="0.5" width="879" height="481" rx="14" fill="#f6f8fa" stroke="#d0d7de"/>
 <rect x="4.5" y="4.5" width="871" height="473" rx="10" fill="#ffffff" stroke="#d0d7de"/>
-<text x="28" y="40" font-size="13" fill="#59636e">Most used languages · by code size · 91 repos · 44 private</text>
-<text x="852" y="40" font-size="12" text-anchor="end" fill="#59636e">Updated Nov 6, 2026</text>
+<text x="28" y="40" font-size="13" fill="#59636e">Most used languages · by code size · 90 repos · 43 private</text>
+<text x="852" y="40" font-size="12" text-anchor="end" fill="#59636e">Updated Nov 7, 2026</text>
 <circle cx="38" cy="68" r="22" fill="url(#halo)"/>
 <circle cx="38" cy="68" r="7" fill="#3178c6"/>
 <text x="56" y="78" font-size="30" font-weight="500" letter-spacing="-0.6" fill="#1f2328">TypeScript</text>
-<text x="223" y="78" font-size="13"><tspan fill="#1a7f37">32.9%</tspan><tspan fill="#59636e"> dominance</tspan></text>
-<text x="28" y="102" font-size="12" fill="#59636e">191.1 MB of code · 39 languages · 12 above 1% · TypeScript in 50 repos</text>
+<text x="223" y="78" font-size="13"><tspan fill="#1a7f37">32.8%</tspan><tspan fill="#59636e"> dominance</tspan></text>
+<text x="28" y="102" font-size="12" fill="#59636e">185.9 MB of code · 39 languages · 12 above 1% · TypeScript in 49 repos</text>
 <rect x="24.5" y="116.5" width="831" height="25" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
 <g clip-path="url(#tape)"><g class="tp">
 <circle cx="41" cy="129.0" r="3.5" fill="#3178c6"/>
-<text x="50" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">TS</tspan><tspan fill="#59636e"> 32.95%</tspan></text>
+<text x="50" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">TS</tspan><tspan fill="#59636e"> 32.75%</tspan></text>
 <circle cx="165" cy="129.0" r="3.5" fill="#3572A5"/>
-<text x="174" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">PY</tspan><tspan fill="#59636e"> 18.81%</tspan></text>
+<text x="174" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">PY</tspan><tspan fill="#59636e"> 19.48%</tspan></text>
 <circle cx="289" cy="129.0" r="3.5" fill="#f1e05a"/>
-<text x="298" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">JS</tspan><tspan fill="#59636e"> 14.48%</tspan></text>
+<text x="298" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">JS</tspan><tspan fill="#59636e"> 14.77%</tspan></text>
 <circle cx="413" cy="129.0" r="3.5" fill="#4F5D95"/>
-<text x="422" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">PHP</tspan><tspan fill="#59636e"> 9.12%</tspan></text>
+<text x="422" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">PHP</tspan><tspan fill="#59636e"> 9.38%</tspan></text>
 <circle cx="537" cy="129.0" r="3.5" fill="#dea584"/>
-<text x="546" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">RS</tspan><tspan fill="#59636e"> 6.43%</tspan></text>
+<text x="546" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">RS</tspan><tspan fill="#59636e"> 5.00%</tspan></text>
 <circle cx="661" cy="129.0" r="3.5" fill="#e34c26"/>
-<text x="670" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">HTML</tspan><tspan fill="#59636e"> 4.61%</tspan></text>
+<text x="670" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">HTML</tspan><tspan fill="#59636e"> 4.74%</tspan></text>
 <circle cx="785" cy="129.0" r="3.5" fill="#00ADD8"/>
-<text x="794" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">GO</tspan><tspan fill="#59636e"> 3.47%</tspan></text>
+<text x="794" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">GO</tspan><tspan fill="#59636e"> 3.58%</tspan></text>
 <circle cx="909" cy="129.0" r="3.5" fill="#336790"/>
-<text x="918" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">SQL</tspan><tspan fill="#59636e"> 2.31%</tspan></text>
+<text x="918" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">SQL</tspan><tspan fill="#59636e"> 2.28%</tspan></text>
 <circle cx="1033" cy="129.0" r="3.5" fill="#f7931e"/>
-<text x="1042" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">HBS</tspan><tspan fill="#59636e"> 1.88%</tspan></text>
+<text x="1042" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">HBS</tspan><tspan fill="#59636e"> 1.93%</tspan></text>
 <circle cx="1157" cy="129.0" r="3.5" fill="#663399"/>
-<text x="1166" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">CSS</tspan><tspan fill="#59636e"> 1.31%</tspan></text>
+<text x="1166" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">CSS</tspan><tspan fill="#59636e"> 1.34%</tspan></text>
 <circle cx="1281" cy="129.0" r="3.5" fill="#00B4AB"/>
-<text x="1290" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">DART</tspan><tspan fill="#59636e"> 1.29%</tspan></text>
+<text x="1290" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">DART</tspan><tspan fill="#59636e"> 1.33%</tspan></text>
 <circle cx="1405" cy="129.0" r="3.5" fill="#A97BFF"/>
-<text x="1414" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">KT</tspan><tspan fill="#59636e"> 1.19%</tspan></text>
+<text x="1414" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">KT</tspan><tspan fill="#59636e"> 1.23%</tspan></text>
 <circle cx="1529" cy="129.0" r="3.5" fill="#7355dd"/>
-<text x="1538" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">C#</tspan><tspan fill="#59636e"> 0.69%</tspan></text>
+<text x="1538" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">C#</tspan><tspan fill="#59636e"> 0.71%</tspan></text>
 <circle cx="1653" cy="129.0" r="3.5" fill="#3D6117"/>
-<text x="1662" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">TEX</tspan><tspan fill="#59636e"> 0.52%</tspan></text>
+<text x="1662" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">TEX</tspan><tspan fill="#59636e"> 0.54%</tspan></text>
 <circle cx="1777" cy="129.0" r="3.5" fill="#3178c6"/>
-<text x="1786" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">TS</tspan><tspan fill="#59636e"> 32.95%</tspan></text>
+<text x="1786" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">TS</tspan><tspan fill="#59636e"> 32.75%</tspan></text>
 <circle cx="1901" cy="129.0" r="3.5" fill="#3572A5"/>
-<text x="1910" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">PY</tspan><tspan fill="#59636e"> 18.81%</tspan></text>
+<text x="1910" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">PY</tspan><tspan fill="#59636e"> 19.48%</tspan></text>
 <circle cx="2025" cy="129.0" r="3.5" fill="#f1e05a"/>
-<text x="2034" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">JS</tspan><tspan fill="#59636e"> 14.48%</tspan></text>
+<text x="2034" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">JS</tspan><tspan fill="#59636e"> 14.77%</tspan></text>
 <circle cx="2149" cy="129.0" r="3.5" fill="#4F5D95"/>
-<text x="2158" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">PHP</tspan><tspan fill="#59636e"> 9.12%</tspan></text>
+<text x="2158" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">PHP</tspan><tspan fill="#59636e"> 9.38%</tspan></text>
 <circle cx="2273" cy="129.0" r="3.5" fill="#dea584"/>
-<text x="2282" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">RS</tspan><tspan fill="#59636e"> 6.43%</tspan></text>
+<text x="2282" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">RS</tspan><tspan fill="#59636e"> 5.00%</tspan></text>
 <circle cx="2397" cy="129.0" r="3.5" fill="#e34c26"/>
-<text x="2406" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">HTML</tspan><tspan fill="#59636e"> 4.61%</tspan></text>
+<text x="2406" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">HTML</tspan><tspan fill="#59636e"> 4.74%</tspan></text>
 <circle cx="2521" cy="129.0" r="3.5" fill="#00ADD8"/>
-<text x="2530" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">GO</tspan><tspan fill="#59636e"> 3.47%</tspan></text>
+<text x="2530" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">GO</tspan><tspan fill="#59636e"> 3.58%</tspan></text>
 <circle cx="2645" cy="129.0" r="3.5" fill="#336790"/>
-<text x="2654" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">SQL</tspan><tspan fill="#59636e"> 2.31%</tspan></text>
+<text x="2654" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">SQL</tspan><tspan fill="#59636e"> 2.28%</tspan></text>
 <circle cx="2769" cy="129.0" r="3.5" fill="#f7931e"/>
-<text x="2778" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">HBS</tspan><tspan fill="#59636e"> 1.88%</tspan></text>
+<text x="2778" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">HBS</tspan><tspan fill="#59636e"> 1.93%</tspan></text>
 <circle cx="2893" cy="129.0" r="3.5" fill="#663399"/>
-<text x="2902" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">CSS</tspan><tspan fill="#59636e"> 1.31%</tspan></text>
+<text x="2902" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">CSS</tspan><tspan fill="#59636e"> 1.34%</tspan></text>
 <circle cx="3017" cy="129.0" r="3.5" fill="#00B4AB"/>
-<text x="3026" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">DART</tspan><tspan fill="#59636e"> 1.29%</tspan></text>
+<text x="3026" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">DART</tspan><tspan fill="#59636e"> 1.33%</tspan></text>
 <circle cx="3141" cy="129.0" r="3.5" fill="#A97BFF"/>
-<text x="3150" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">KT</tspan><tspan fill="#59636e"> 1.19%</tspan></text>
+<text x="3150" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">KT</tspan><tspan fill="#59636e"> 1.23%</tspan></text>
 <circle cx="3265" cy="129.0" r="3.5" fill="#7355dd"/>
-<text x="3274" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">C#</tspan><tspan fill="#59636e"> 0.69%</tspan></text>
+<text x="3274" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">C#</tspan><tspan fill="#59636e"> 0.71%</tspan></text>
 <circle cx="3389" cy="129.0" r="3.5" fill="#3D6117"/>
-<text x="3398" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">TEX</tspan><tspan fill="#59636e"> 0.52%</tspan></text>
+<text x="3398" y="133" font-size="11"><tspan font-weight="600" fill="#1f2328">TEX</tspan><tspan fill="#59636e"> 0.54%</tspan></text>
 </g></g>
 <g clip-path="url(#map)">
-<rect x="25.5" y="155.5" width="271.1" height="301.0" rx="6" fill="#3178c6"/>
-<rect x="25.5" y="155.5" width="271.1" height="301.0" rx="6" fill="url(#gloss)"/>
-<rect x="26.0" y="156.0" width="270.1" height="300.0" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
-<text x="282.6" y="442.5" font-size="187" font-weight="800" text-anchor="end" letter-spacing="-2" fill="#ffffff" fill-opacity="0.10">TS</text>
+<rect x="25.5" y="155.5" width="269.5" height="301.0" rx="6" fill="#3178c6"/>
+<rect x="25.5" y="155.5" width="269.5" height="301.0" rx="6" fill="url(#gloss)"/>
+<rect x="26.0" y="156.0" width="268.5" height="300.0" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
+<text x="281.0" y="442.5" font-size="187" font-weight="800" text-anchor="end" letter-spacing="-2" fill="#ffffff" fill-opacity="0.10">TS</text>
 <text x="37.5" y="179.5" font-size="13" font-weight="600" fill="#ffffff">TypeScript</text>
-<text x="37.5" y="215.5" font-size="30" font-weight="600" letter-spacing="-0.5" fill="#ffffff">32.9%</text>
-<text x="37.5" y="444.5" font-size="11" fill="rgba(255,255,255,0.72)">63.0 MB · 50 repos</text>
-<rect x="299.6" y="155.5" width="153.5" height="301.0" rx="6" fill="#3572A5"/>
-<rect x="299.6" y="155.5" width="153.5" height="301.0" rx="6" fill="url(#gloss)"/>
-<rect x="300.1" y="156.0" width="152.5" height="300.0" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
-<text x="439.1" y="442.5" font-size="111" font-weight="800" text-anchor="end" letter-spacing="-2" fill="#ffffff" fill-opacity="0.10">PY</text>
-<text x="311.6" y="179.5" font-size="13" font-weight="600" fill="#ffffff">Python</text>
-<text x="311.6" y="205.5" font-size="20" font-weight="600" letter-spacing="-0.5" fill="#ffffff">18.8%</text>
-<text x="311.6" y="444.5" font-size="11" fill="rgba(255,255,255,0.72)">36.0 MB · 40 repos</text>
-<rect x="456.1" y="155.5" width="193.4" height="183.5" rx="6" fill="#f1e05a"/>
-<rect x="456.1" y="155.5" width="193.4" height="183.5" rx="6" fill="url(#gloss)"/>
-<rect x="456.6" y="156.0" width="192.4" height="182.5" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
-<text x="635.5" y="325.0" font-size="114" font-weight="800" text-anchor="end" letter-spacing="-2" fill="#0d1117" fill-opacity="0.10">JS</text>
-<text x="468.1" y="179.5" font-size="13" font-weight="600" fill="#0d1117">JavaScript</text>
-<text x="468.1" y="205.5" font-size="20" font-weight="600" letter-spacing="-0.5" fill="#0d1117">14.5%</text>
-<text x="468.1" y="327.0" font-size="11" fill="rgba(13,17,23,0.62)">27.7 MB · 46 repos</text>
-<rect x="456.1" y="342.0" width="193.4" height="114.5" rx="6" fill="#4F5D95"/>
-<rect x="456.1" y="342.0" width="193.4" height="114.5" rx="6" fill="url(#gloss)"/>
-<rect x="456.6" y="342.5" width="192.4" height="113.5" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
-<text x="635.5" y="442.5" font-size="71" font-weight="800" text-anchor="end" letter-spacing="-2" fill="#ffffff" fill-opacity="0.10">PHP</text>
-<text x="468.1" y="366.0" font-size="13" font-weight="600" fill="#ffffff">PHP</text>
-<text x="468.1" y="392.0" font-size="20" font-weight="600" letter-spacing="-0.5" fill="#ffffff">9.1%</text>
-<text x="468.1" y="444.5" font-size="11" fill="rgba(255,255,255,0.72)">17.4 MB · 1 repo</text>
-<rect x="652.5" y="155.5" width="116.4" height="133.2" rx="6" fill="#dea584"/>
-<rect x="652.5" y="155.5" width="116.4" height="133.2" rx="6" fill="url(#gloss)"/>
-<rect x="653.0" y="156.0" width="115.4" height="132.2" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
-<text x="664.5" y="179.5" font-size="13" font-weight="600" fill="#0d1117">Rust</text>
-<text x="664.5" y="205.5" font-size="20" font-weight="600" letter-spacing="-0.5" fill="#0d1117">6.4%</text>
-<rect x="772.0" y="155.5" width="82.5" height="133.2" rx="6" fill="#e34c26"/>
-<rect x="772.0" y="155.5" width="82.5" height="133.2" rx="6" fill="url(#gloss)"/>
-<rect x="772.5" y="156.0" width="81.5" height="132.2" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
-<text x="780.0" y="172.5" font-size="11" font-weight="600" fill="#ffffff">HTML</text>
-<text x="780.0" y="186.5" font-size="11" fill="rgba(255,255,255,0.72)">4.6%</text>
-<rect x="652.5" y="291.7" width="84.2" height="97.8" rx="6" fill="#00ADD8"/>
-<rect x="652.5" y="291.7" width="84.2" height="97.8" rx="6" fill="url(#gloss)"/>
-<rect x="653.0" y="292.2" width="83.2" height="96.8" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
-<text x="660.5" y="308.7" font-size="11" font-weight="600" fill="#0d1117">GO</text>
-<text x="660.5" y="322.7" font-size="11" fill="rgba(13,17,23,0.62)">3.5%</text>
-<rect x="652.5" y="392.5" width="84.2" height="64.0" rx="6" fill="#336790"/>
-<rect x="652.5" y="392.5" width="84.2" height="64.0" rx="6" fill="url(#gloss)"/>
-<rect x="653.0" y="393.0" width="83.2" height="63.0" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
-<text x="660.5" y="409.5" font-size="11" font-weight="600" fill="#ffffff">SQL</text>
-<text x="660.5" y="423.5" font-size="11" fill="rgba(255,255,255,0.72)">2.3%</text>
-<rect x="739.7" y="291.7" width="66.3" height="65.4" rx="6" fill="#f7931e"/>
-<rect x="739.7" y="291.7" width="66.3" height="65.4" rx="6" fill="url(#gloss)"/>
-<rect x="740.2" y="292.2" width="65.3" height="64.4" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
-<text x="747.7" y="308.7" font-size="11" font-weight="600" fill="#0d1117">HBS</text>
-<text x="747.7" y="322.7" font-size="11" fill="rgba(13,17,23,0.62)">1.9%</text>
-<rect x="809.0" y="291.7" width="45.5" height="65.4" rx="6" fill="#663399"/>
-<rect x="809.0" y="291.7" width="45.5" height="65.4" rx="6" fill="url(#gloss)"/>
-<rect x="809.5" y="292.2" width="44.5" height="64.4" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
-<text x="817.0" y="308.7" font-size="11" font-weight="600" fill="#ffffff">CSS</text>
-<text x="817.0" y="322.7" font-size="11" fill="rgba(255,255,255,0.72)">1.3%</text>
-<rect x="739.7" y="360.1" width="114.8" height="96.4" rx="6" fill="#eaeef2"/>
-<rect x="739.7" y="360.1" width="114.8" height="96.4" rx="6" fill="url(#gloss)"/>
-<rect x="740.2" y="360.6" width="113.8" height="95.4" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
-<text x="751.7" y="384.1" font-size="13" font-weight="600" fill="#1f2328">+29 more</text>
-<text x="751.7" y="410.1" font-size="20" font-weight="600" letter-spacing="-0.5" fill="#1f2328">4.6%</text>
+<text x="37.5" y="215.5" font-size="30" font-weight="600" letter-spacing="-0.5" fill="#ffffff">32.8%</text>
+<text x="37.5" y="444.5" font-size="11" fill="rgba(255,255,255,0.72)">60.9 MB · 49 repos</text>
+<rect x="298.0" y="155.5" width="159.1" height="301.0" rx="6" fill="#3572A5"/>
+<rect x="298.0" y="155.5" width="159.1" height="301.0" rx="6" fill="url(#gloss)"/>
+<rect x="298.5" y="156.0" width="158.1" height="300.0" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
+<text x="443.1" y="442.5" font-size="115" font-weight="800" text-anchor="end" letter-spacing="-2" fill="#ffffff" fill-opacity="0.10">PY</text>
+<text x="310.0" y="179.5" font-size="13" font-weight="600" fill="#ffffff">Python</text>
+<text x="310.0" y="205.5" font-size="20" font-weight="600" letter-spacing="-0.5" fill="#ffffff">19.5%</text>
+<text x="310.0" y="444.5" font-size="11" fill="rgba(255,255,255,0.72)">36.2 MB · 39 repos</text>
+<rect x="460.1" y="155.5" width="197.9" height="182.9" rx="6" fill="#f1e05a"/>
+<rect x="460.1" y="155.5" width="197.9" height="182.9" rx="6" fill="url(#gloss)"/>
+<rect x="460.6" y="156.0" width="196.9" height="181.9" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
+<text x="644.0" y="324.4" font-size="113" font-weight="800" text-anchor="end" letter-spacing="-2" fill="#0d1117" fill-opacity="0.10">JS</text>
+<text x="472.1" y="179.5" font-size="13" font-weight="600" fill="#0d1117">JavaScript</text>
+<text x="472.1" y="205.5" font-size="20" font-weight="600" letter-spacing="-0.5" fill="#0d1117">14.8%</text>
+<text x="472.1" y="326.4" font-size="11" fill="rgba(13,17,23,0.62)">27.4 MB · 45 repos</text>
+<rect x="460.1" y="341.4" width="197.9" height="115.1" rx="6" fill="#4F5D95"/>
+<rect x="460.1" y="341.4" width="197.9" height="115.1" rx="6" fill="url(#gloss)"/>
+<rect x="460.6" y="341.9" width="196.9" height="114.1" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
+<text x="644.0" y="442.5" font-size="71" font-weight="800" text-anchor="end" letter-spacing="-2" fill="#ffffff" fill-opacity="0.10">PHP</text>
+<text x="472.1" y="365.4" font-size="13" font-weight="600" fill="#ffffff">PHP</text>
+<text x="472.1" y="391.4" font-size="20" font-weight="600" letter-spacing="-0.5" fill="#ffffff">9.4%</text>
+<text x="472.1" y="444.5" font-size="11" fill="rgba(255,255,255,0.72)">17.4 MB · 1 repo</text>
+<rect x="661.0" y="155.5" width="97.9" height="122.3" rx="6" fill="#dea584"/>
+<rect x="661.0" y="155.5" width="97.9" height="122.3" rx="6" fill="url(#gloss)"/>
+<rect x="661.5" y="156.0" width="96.9" height="121.3" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
+<text x="673.0" y="179.5" font-size="13" font-weight="600" fill="#0d1117">Rust</text>
+<text x="673.0" y="205.5" font-size="20" font-weight="600" letter-spacing="-0.5" fill="#0d1117">5.0%</text>
+<rect x="761.9" y="155.5" width="92.6" height="122.3" rx="6" fill="#e34c26"/>
+<rect x="761.9" y="155.5" width="92.6" height="122.3" rx="6" fill="url(#gloss)"/>
+<rect x="762.4" y="156.0" width="91.6" height="121.3" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
+<text x="769.9" y="172.5" font-size="11" font-weight="600" fill="#ffffff">HTML</text>
+<text x="769.9" y="186.5" font-size="11" fill="rgba(255,255,255,0.72)">4.7%</text>
+<rect x="661.0" y="280.8" width="79.8" height="106.2" rx="6" fill="#00ADD8"/>
+<rect x="661.0" y="280.8" width="79.8" height="106.2" rx="6" fill="url(#gloss)"/>
+<rect x="661.5" y="281.3" width="78.8" height="105.2" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
+<text x="669.0" y="297.8" font-size="11" font-weight="600" fill="#0d1117">GO</text>
+<text x="669.0" y="311.8" font-size="11" fill="rgba(13,17,23,0.62)">3.6%</text>
+<rect x="661.0" y="390.0" width="79.8" height="66.5" rx="6" fill="#336790"/>
+<rect x="661.0" y="390.0" width="79.8" height="66.5" rx="6" fill="url(#gloss)"/>
+<rect x="661.5" y="390.5" width="78.8" height="65.5" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
+<text x="669.0" y="407.0" font-size="11" font-weight="600" fill="#ffffff">SQL</text>
+<text x="669.0" y="421.0" font-size="11" fill="rgba(255,255,255,0.72)">2.3%</text>
+<rect x="743.8" y="280.8" width="64.1" height="69.7" rx="6" fill="#f7931e"/>
+<rect x="743.8" y="280.8" width="64.1" height="69.7" rx="6" fill="url(#gloss)"/>
+<rect x="744.3" y="281.3" width="63.1" height="68.7" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
+<text x="751.8" y="297.8" font-size="11" font-weight="600" fill="#0d1117">HBS</text>
+<text x="751.8" y="311.8" font-size="11" fill="rgba(13,17,23,0.62)">1.9%</text>
+<rect x="810.9" y="280.8" width="43.6" height="69.7" rx="6" fill="#663399"/>
+<rect x="810.9" y="280.8" width="43.6" height="69.7" rx="6" fill="url(#gloss)"/>
+<rect x="811.4" y="281.3" width="42.6" height="68.7" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
+<text transform="translate(836.7 342.5) rotate(-90)" font-size="11"><tspan font-weight="600" fill="#ffffff">CSS</tspan><tspan fill="rgba(255,255,255,0.72)"> 1.3%</tspan></text>
+<rect x="743.8" y="353.5" width="110.7" height="103.0" rx="6" fill="#eaeef2"/>
+<rect x="743.8" y="353.5" width="110.7" height="103.0" rx="6" fill="url(#gloss)"/>
+<rect x="744.3" y="354.0" width="109.7" height="102.0" rx="5.5" fill="none" stroke="#fff" stroke-opacity="0.14"/>
+<text x="755.8" y="377.5" font-size="13" font-weight="600" fill="#1f2328">+29 more</text>
+<text x="755.8" y="403.5" font-size="20" font-weight="600" letter-spacing="-0.5" fill="#1f2328">4.8%</text>
 <rect class="sh" x="0" y="154" width="220" height="304" fill="url(#beam)" transform="translate(-260 0)"/>
 </g>
 </svg>
