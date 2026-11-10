@@ -47,7 +47,5 @@
   <img width="100%" alt="Weekly contribution candlestick chart with volume for rade-nugroho" src="assets/contrib-candles-light.svg" />
 </picture>
 
-[![rade-nugroho's GitHub stats](https://gitshine.com/card/rade-nugroho?theme=night)](https://gitshine.com/stats/rade-nugroho)
-[![rade-nugroho's GitHub badges](https://gitshine.com/badges/rade-nugroho)](https://gitshine.com/stats/rade-nugroho#badges)
 
 <sub>Last updated: October 2026</sub>
