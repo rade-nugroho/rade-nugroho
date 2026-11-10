@@ -51,4 +51,6 @@
   <img width="100%" alt="Weekly contribution candlestick chart with volume for rade-nugroho" src="assets/contrib-candles-light.svg" />
 </picture>
 
+[![rade-nugroho's GitHub badges](https://gitshine.com/badges/rade-nugroho)](https://gitshine.com/stats/rade-nugroho#badges)
+
 <sub>Last updated: October 2026</sub>
