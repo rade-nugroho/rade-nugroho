@@ -26,12 +26,8 @@
 
 ## GitHub stats
 
-<picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/github-stats-dark-compact.svg" />
-  <source media="(max-width: 600px)" srcset="assets/github-stats-light-compact.svg" />
-  <source media="(prefers-color-scheme: dark)" srcset="assets/github-stats-dark.svg" />
-  <img width="100%" alt="GitHub stats: commits, pull requests, issues and reviews mix, repositories contributed to, stars, followers and contribution streaks" src="assets/github-stats-light.svg" />
-</picture>
+[![rade-nugroho's GitHub stats](https://gitshine.com/card/rade-nugroho?theme=night)](https://gitshine.com/stats/rade-nugroho)
+[![rade-nugroho's GitHub badges](https://gitshine.com/badges/rade-nugroho)](https://gitshine.com/stats/rade-nugroho#badges)
 
 ## Most used languages
 
