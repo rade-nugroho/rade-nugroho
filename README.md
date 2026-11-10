@@ -15,15 +15,6 @@
 
 </div>
 
-## What I'm building
-
-- **[TANTIRA](https://github.com/TANTIRA)**: an ontology-driven, agentic enterprise stack.
-  - **Mesta-TMS-WMS**: transport and warehouse management where AI agents plan, execute, track and settle operations end to end. *Rust*
-  - **Mesta-Foundry**: an enterprise data operating system. *Python*
-  - **Raven**: a common operating picture and target workbench, with geospatial COP, ontology APIs and a defense OSDK. *Python*
-- **[daemonprotocol](https://github.com/daemonprotocol)**: decision intelligence for AML and compliance investigations, covering data fusion, entity resolution, graph analytics and case management.
-- **Open source**: deterministic Solana program auditing, agentic OSINT and detection engineering.
-
 ## GitHub stats
 
 [![rade-nugroho's GitHub stats](https://gitshine.com/card/rade-nugroho?theme=night)](https://gitshine.com/stats/rade-nugroho)
